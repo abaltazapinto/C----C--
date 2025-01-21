@@ -1,0 +1,1 @@
+so instalacao do linux mint e os necessarios programas para rodar c e c++

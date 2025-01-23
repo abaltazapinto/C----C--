@@ -14,8 +14,8 @@ int main()
     printf("Characters: %c %c \n", 'z', 80);
     printf("Long Integers: %ld %ld\n", 4147483647, 5147483647);
     printf ("Some different radices: %d %x %o %#x %#o \n", 100, 100, 100, 100, 100);
-    printf ("floats: %4. %E \n", 3.14159, 3.14159);
-    printf("Preciding with empty spaces: %10d \n", 1997);
+    printf ("floats: %4.2f %E \n", 3.14159, 3.14159);
+    printf("Preciding with empty spaces: %010d \n", 1997);
     printf("Width: %*d \n", 15, 140);
     printf("%s \n", "Educative");
 

@@ -5,5 +5,9 @@ int main() {
     float b;
     char x;
     printf("Introduza um inteiro, decimal e caracter.");
-    scanf("%")
+    scanf("%d %f %c", &a, &b, &x);
+
+    printf("Inteiro=%d, Float=%f, Caracter=%c", a, b, x);
+
+    return 0;
 }

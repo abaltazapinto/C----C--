@@ -1,2 +1,1 @@
-
-    case 7:
+#include <c.type.h>

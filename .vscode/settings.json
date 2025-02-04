@@ -78,6 +78,7 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
-    "EX07.C": "cpp"
+    "EX07.C": "cpp",
+    "stdio.h": "c"
   }
 }

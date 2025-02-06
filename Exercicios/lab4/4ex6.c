@@ -16,7 +16,7 @@ int main() {
         }
         else if (isdigit(ch)) {
             printf("'%c' é um digito.\n",ch);
-        }else if(ch >= 32 && ch <= 64 || ch >=91  && ch <=96) || ch >=7 && ch <= 13{
+        }else if(ch >= 32 && ch <= 64 || ch >=91  && ch <=96 || ch >=7 && ch <= 13) {
             printf("'%c' é um caracter especial\n");
         }
 

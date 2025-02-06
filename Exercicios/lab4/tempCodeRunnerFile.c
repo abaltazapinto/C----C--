@@ -1,1 +1,1 @@
-#include <c.type.h>
+if(ch >= 32 && ch <= 64 || ch >=91  && ch <=96) || ch >=7 && ch <= 13{

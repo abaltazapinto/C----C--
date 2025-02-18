@@ -5,7 +5,7 @@ int main()
 	int valor;
 	int soma = 0;
 	do {
-		printf("Que valor quer somar ? ||  Introduza 0 se quer terminar o programa");
+		printf("Que valor quer somar ? ||  Introduza 0 se quer terminar o programa\n");
 		scanf("%d", &valor);
 		soma += valor;
 	}while (valor != 0);

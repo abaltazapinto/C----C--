@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+	char titulo[] = "Noticias-IT";
+	int contador =0,i;
+
+	for(i=o;i<=9;i++){
+	if(titulo[i] >= 'A' && titulo[i]<= 'Z')
+		contador++;
+
+	if (titulo[i]=='i')
+		contador2++
+	}
+	return 0;
+}

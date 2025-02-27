@@ -1,0 +1,136 @@
+Improved ~/.config/starship.toml
+toml
+Copy
+Edit
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Customize the character at the start of the prompt
+[character]
+success_symbol = "[➜](bold green)"  # Success
+error_symbol = "[✗](bold red)"     # Error
+
+# Hide the package version display in the prompt
+[package]
+disabled = true
+
+# Always show the username
+[username]
+style = "bold yellow"
+show_always = true
+
+# Display the hostname only when on a remote machine
+[hostname]
+ssh_only = true
+style = "italic dimmed blue"
+
+# Show the current directory
+[directory]
+truncation_length = 3  # Limit to 3 directories
+truncation_symbol = "…/"  # Truncate with "…/"
+style = "bold cyan"
+
+# Git branch and status
+[git_branch]
+symbol = " "  # Nerd Font branch symbol
+style = "bold magenta"
+
+[git_status]
+conflicted = "⚠️ "
+ahead = "⇡${count}"  # Ahead commits
+behind = "⇣${count}" # Behind commits
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "✚"
+modified = "✎"
+staged = "[✔](green)"
+deleted = "[✖](red)"
+style = "bold yellow"
+
+# Show the time in HH:mm:ss format
+[time]
+format = "[🕒 %T](bold green)"
+disabled = false
+
+# Show the battery status
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡"
+discharging_symbol = "🔌"
+style = "bold yellow"
+disabled = false
+
+# Display the Python virtual environment
+[python]
+symbol = "🐍 "
+style = "bold blue"
+
+# Docker context
+[docker_context]
+symbol = "🐳 "
+style = "bold cyan"
+
+# Kubernetes context
+[kubernetes]
+symbol = "⎈ "
+style = "bold blue"
+
+# Node.js version
+[nodejs]
+symbol = "⬢ "
+style = "bold green"
+disabled = false
+
+# Ruby version
+[ruby]
+symbol = "💎 "
+style = "bold red"
+disabled = false
+
+# Display the jobs running in the background
+[jobs]
+symbol = "⚙️ "
+style = "bold blue"
+
+# Status of the shell exit code
+[status]
+success_symbol = "[✔](bold green)"
+failure_symbol = "[✖](bold red)"
+
+# Show memory usage (disabled by default)
+[memory_usage]
+symbol = "🐏 "
+threshold = 70  # Show only if usage > 70%
+style = "bold purple"
+disabled = true
+Features of This Configuration:
+User and Host Information:
+
+Displays the username in yellow.
+Hostname appears only during SSH sessions.
+Directory Details:
+
+Shows up to three directories with truncation (…/).
+Git Integration:
+
+Displays the current branch and Git status (e.g., untracked, modified, ahead/behind commits).
+Time:
+
+Always shows the current time in green with a clock emoji.
+Battery Status:
+
+Indicates charging, discharging, or full battery status with relevant icons.
+Programming Environments:
+
+Displays Python, Node.js, Docker, and Kubernetes context, along with Ruby if enabled.
+Other Features:
+Background jobs, shell exit status, and optional memory usage (disabled by default).
+
+How to Apply:
+Copy this configuration into your ~/.config/starship.toml file.
+Save the file and reload your shell:
+bash
+Copy
+Edit
+exec $SHELL
+Ensure your terminal font is set to a Nerd Font (like FiraCode Nerd Font) for all icons to render correctly.
+Enjoy your stylish and functional Starship prompt! Let me know if you want additional customizations. 🚀

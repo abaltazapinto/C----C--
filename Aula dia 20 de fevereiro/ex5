@@ -1,0 +1,38 @@
+#include <stdio.h>
+/* exercicio 5*/
+
+int main(){
+	int num[]={12,34,567,101,8};
+	int maior, menor;
+	int i;
+	
+	m=num[0];
+
+	i = 0;
+
+	while(i<5) {
+		if(num[i]>m)
+			m = num[i];)
+			
+		i++;
+	}
+	
+	printf("Menor valor %d, menor);
+	printf("Maior valor %d, maior);
+	
+
+	i = 0;
+	while(i<5) {
+	
+	if( num[i] % 2 == 0)
+		printf("%d -> Par\n",num[i]);
+	else 
+		printf("%d -> Impar\n", num[i]);
+	
+	i++;
+	}
+	return(0);
+}
+
+
+

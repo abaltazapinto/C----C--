@@ -1,45 +1,39 @@
 #include <iostream>
 using namespace std;
 
-class	contaBancaria
-{
+class contaBancaria {
+private:
+    double saldo;
 
-	double saldo;
+public:
+    int nif;
 
-	public:
-	int nif;
+    // Construtor para inicializar o saldo
+    contaBancaria(double saldoInicial = 0.0) : saldo(saldoInicial) {}
 
-	void escreve_saldo(){
-		cout<<"saldo:"<<saldo<<"\n";
-	}
+    void escreve_saldo() {
+        cout << "saldo: " << saldo << "\n";
+    }
 
-	void levantamento(float valor)
-	{
-		if(saldo >=valor) {
-			saldo = saldo - valor;
-			cout<<"Levantamento efetuado com sucesso";
-		}
-		else{
-			cout<<"Saldo insuficiente";
-		}
-	}
+    void levantamento(float valor) {
+        if (saldo >= valor) {
+            saldo -= valor;
+            cout << "Levantamento efetuado com sucesso\n";
+        } else {
+            cout << "Saldo insuficiente\n";
+        }
+    }
 };
 
-int	main()
-{
+int main() {
+    contaBancaria conta1(1500.0); // Inicializa o saldo com 1500
+    contaBancaria cont2;
+    conta1.nif = 211285641;
 
-	contaBancaria conta1, cont2;;
-	int a=20;
-	conta1.nif=211285641;
-	//cta1.saldo=1500;
+    conta1.escreve_saldo();
+    cout << "NIF: " << conta1.nif << "\n";
 
-
-//	cout<<"Saldo:"<<conta1.saldo;
-	conta1.escreve_saldo();
-	cout<<"NIF:"<<conta1.nif;
-
-
-
-	conta.levantamento(2000)
-	return 0;
+    conta1.levantamento(2000);
+    conta1.escreve_saldo();
+    return 0;
 }

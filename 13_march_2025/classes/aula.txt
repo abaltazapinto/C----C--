@@ -1,0 +1,3 @@
+POde mos considerar as classe como um conjunto de funcoes e variaveis. 
+
+

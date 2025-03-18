@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX_LEN 200
+#define MAX_LEN_PART2 80
+
+const char original[] = "abcdefghijlmnopqrstuvxz";
+const char encrypted[] = "defghijlmnopqrstuvxzabc";
+
+char map_char(char c, int decrypt) {
+    for (int i = 0; i < strlen(original); i++) {
+        if (c == original[i]) {
+            return decrypt ? original[(i + strlen(original) - 3) % strlen(original)] : encrypted[i];
+        }
+    }
+    return c;
+}
+
+void encrypt_decrypt(char *text, int decrypt) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        text[i] = map_char(text[i], decrypt);
+    }
+}
+
+void remove_character(char *str, char c, int case_sensitive) {
+    int count = 0, positions[MAX_LEN_PART2], pos_index = 0;
+    int len = strlen(str);
+    char *write_ptr = str;
+    
+    for (int i = 0; i < len; i++) {
+        if ((case_sensitive && str[i] == c) || (!case_sensitive && tolower(str[i]) == tolower(c))) {
+            positions[pos_index++] = i;
+            count++;
+        } else {
+            *write_ptr++ = str[i];
+        }
+    }
+    *write_ptr = '\0';
+    
+    printf("Foram feitas %d eliminacoes:\n%s\n", count, str);
+    printf("Posicoes eliminadas: ");
+    for (int i = 0; i < pos_index; i++) {
+        printf("%d ", positions[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    char text[MAX_LEN], option;
+    
+    printf("Indique o texto: ");
+    fgets(text, MAX_LEN, stdin);
+    text[strcspn(text, "\n")] = 0;
+    
+    printf("Tarefa (E ou D): ");
+    scanf(" %c", &option);
+    
+    if (option == 'E' || option == 'D') {
+        encrypt_decrypt(text, option == 'D');
+        printf("Resultado:\n%s\n", text);
+    } else {
+        printf("Opcao invalida!\n");
+    }
+    
+    getchar(); // Limpar buffer
+    
+    char str[MAX_LEN_PART2], char_to_remove, case_option;
+    int case_sensitive;
+    
+    printf("Indique o texto:\n");
+    fgets(str, MAX_LEN_PART2, stdin);
+    str[strcspn(str, "\n")] = 0;
+    
+    printf("Indique o caracter a eliminar: ");
+    scanf(" %c", &char_to_remove);
+    
+    printf("Ignorar maiusculas/minusculas? (S/N): ");
+    scanf(" %c", &case_option);
+    case_sensitive = (case_option == 'N');
+    
+    remove_character(str, char_to_remove, case_sensitive);
+    
+    return 0;
+}
